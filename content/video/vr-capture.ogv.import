@@ -1,0 +1,14 @@
+[remap]
+
+importer="Theora"
+type="VideoStreamTheora"
+path="res://.import/vr-capture.ogv-f1047781f2fecc19135f744d38a1bc87.ogvstr"
+
+[deps]
+
+source_file="res://content/video/vr-capture.ogv"
+dest_files=[ "res://.import/vr-capture.ogv-f1047781f2fecc19135f744d38a1bc87.ogvstr" ]
+
+[params]
+
+loop=true
