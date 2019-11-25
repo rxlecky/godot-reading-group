@@ -12,8 +12,7 @@
 [ext_resource path="res://content/power_pitch/img/godot-3.1-editor-tps-demo-720p.jpg" type="Texture" id=10]
 [ext_resource path="res://src/slide/widgets/Footer.tscn" type="PackedScene" id=11]
 
-
-[node name="A_free_modern_engine" index="0" instance=ExtResource( 1 )]
+[node name="A_free_modern_engine" instance=ExtResource( 1 )]
 
 [node name="Column" parent="." index="1" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -67,4 +66,3 @@ margin_top = 940.0
 margin_right = 1921.0
 margin_bottom = 1080.0
 text = "*And PS4, XboxOne, Switch, PS Vita..."
-

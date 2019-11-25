@@ -32,7 +32,7 @@ autowrap = true
 clip_text = true
 
 [node name="Shadow" type="Label" parent="Text"]
-modulate = Color( 0.34902, 0, 0.701961, 0.486275 )
+modulate = Color( 0.00784314, 0.156863, 0.0392157, 1 )
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -18,6 +18,9 @@ theme = ExtResource( 6 )
 texture = ExtResource( 5 )
 expand = true
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 title = "Title"
 
 [node name="Column" type="VBoxContainer" parent="."]
@@ -39,7 +42,7 @@ uppercase = true
 script = ExtResource( 2 )
 
 [node name="Shadow" type="Label" parent="Column/Title"]
-modulate = Color( 0.351563, 0, 0.703125, 0.487922 )
+modulate = Color( 0.00784314, 0.156863, 0.0392157, 1 )
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -69,7 +72,7 @@ clip_text = true
 script = ExtResource( 7 )
 
 [node name="Shadow" type="Label" parent="Column/Subtitle"]
-modulate = Color( 0.34902, 0, 0.701961, 0.486275 )
+modulate = Color( 0.00784314, 0.156863, 0.0392157, 1 )
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0

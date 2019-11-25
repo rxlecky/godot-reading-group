@@ -19,8 +19,7 @@
 [ext_resource path="res://content/power_pitch/img/user-interface/ui-result.png" type="Texture" id=17]
 [ext_resource path="res://src/slide/widgets/Footer.tscn" type="PackedScene" id=18]
 
-
-[node name="AllInOnePackage" index="0" instance=ExtResource( 1 )]
+[node name="AllInOnePackage" instance=ExtResource( 1 )]
 
 [node name="Column" parent="." index="1" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -72,7 +71,6 @@ expand = true
 stretch_mode = 6
 
 [node name="Column" parent="Column/Body/Row/PictureSlideshow" index="4" instance=ExtResource( 2 )]
-editor/display_folded = true
 visible = false
 
 [node name="animation-state-machine-2" type="TextureRect" parent="Column/Body/Row/PictureSlideshow/Column" index="0"]
@@ -136,4 +134,3 @@ anchor_bottom = 0.0
 margin_top = 940.0
 margin_right = 1921.0
 margin_bottom = 1080.0
-
