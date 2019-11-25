@@ -4,8 +4,7 @@
 [ext_resource path="res://src/slide/widgets/Picture.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/power_pitch/img/godot-pres-intro.png" type="Texture" id=3]
 
-
-[node name="Title" index="0" instance=ExtResource( 1 )]
+[node name="Title" instance=ExtResource( 1 )]
 
 [node name="Picture" parent="." index="1" instance=ExtResource( 2 )]
 anchor_right = 0.0
