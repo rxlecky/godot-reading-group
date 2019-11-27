@@ -19,43 +19,40 @@
 [ext_resource path="res://content/power_pitch/img/user-interface/ui-result.png" type="Texture" id=17]
 [ext_resource path="res://src/slide/widgets/Footer.tscn" type="PackedScene" id=18]
 
-[node name="AllInOnePackage" index="0" instance=ExtResource( 1 )]
+[node name="AllInOnePackage" instance=ExtResource( 1 )]
 
 [node name="Column" parent="." index="1" instance=ExtResource( 2 )]
-anchor_top = 0.000925926
 anchor_right = 0.0
-anchor_bottom = 0.000925926
-margin_right = 1920.0
+anchor_bottom = 0.0
+margin_right = 1921.0
 margin_bottom = 1080.0
 
 [node name="Header" parent="Column" index="0" instance=ExtResource( 3 )]
 anchor_right = 0.0
-margin_right = 1920.0
+margin_right = 1921.0
 margin_bottom = 210.0
-title = "All-in-One Package"
+title = "Embedded Docs"
 
 [node name="Body" parent="Column" index="1" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 210.0
-margin_right = 1920.0
+margin_right = 1921.0
 margin_bottom = 940.0
 
 [node name="Row" parent="Column/Body" index="0" instance=ExtResource( 5 )]
 
 [node name="TextBox" parent="Column/Body/Row" index="0" instance=ExtResource( 6 )]
+margin_right = 639.0
 margin_bottom = 730.0
-text = "- [color=#E3266F]Code editor[/color] with embedded docs
-- [color=#02E180]Shader[/color] editor, visual and code
-- [color=#26BFE3]Animation[/color] editor with 2d rigging
-- And much more built-in
+text = "- Any symbol can instantly be defined
 "
 
 [node name="PictureSlideshow" parent="Column/Body/Row" index="1" instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 642.0
-margin_right = 1920.0
+margin_left = 643.0
+margin_right = 1921.0
 margin_bottom = 730.0
 
 [node name="gdscript-editor-3.1" type="TextureRect" parent="Column/Body/Row/PictureSlideshow" index="2"]
@@ -137,5 +134,5 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 940.0
-margin_right = 1920.0
+margin_right = 1921.0
 margin_bottom = 1080.0
