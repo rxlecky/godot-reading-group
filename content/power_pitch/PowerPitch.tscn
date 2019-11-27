@@ -4,27 +4,29 @@
 [ext_resource path="res://content/power_pitch/slides/Title.tscn" type="PackedScene" id=2]
 [ext_resource path="res://content/power_pitch/slides/Modular.tscn" type="PackedScene" id=3]
 [ext_resource path="res://content/power_pitch/slides/All-in-one_package.tscn" type="PackedScene" id=5]
-[ext_resource path="res://content/power_pitch/slides/Godot_is_in_great_shape.tscn" type="PackedScene" id=11]
+[ext_resource path="res://content/power_pitch/slides/Open_Source.tscn" type="PackedScene" id=11]
 [ext_resource path="res://content/power_pitch/slides/Thank_you.tscn" type="PackedScene" id=14]
 
-[node name="PowerPitch" index="0" instance=ExtResource( 1 )]
+[node name="PowerPitch" instance=ExtResource( 1 )]
 
 [node name="Slides" parent="." index="0"]
 margin_top = -1.0
 margin_bottom = -1.0
 
 [node name="Title" parent="Slides" index="0" instance=ExtResource( 2 )]
+margin_right = 0.00012207
 
 [node name="All_in_one_package" parent="Slides" index="1" instance=ExtResource( 5 )]
-visible = false
+margin_right = 0.00012207
 
-[node name="Godot_is_in_great_shape" parent="Slides" index="2" instance=ExtResource( 11 )]
+[node name="Open_Source" parent="Slides" index="2" instance=ExtResource( 11 )]
+margin_right = 0.0
 
 [node name="Modular" parent="Slides" index="3" instance=ExtResource( 3 )]
-visible = false
+margin_right = 0.00012207
 
 [node name="Thank_you" parent="Slides" index="4" instance=ExtResource( 14 )]
-visible = false
+margin_right = 0.00012207
 
 [node name="SwipeDetector" parent="." index="1"]
 max_diagonal_slope = 1.3

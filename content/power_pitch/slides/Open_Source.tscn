@@ -10,7 +10,7 @@
 [ext_resource path="res://content/power_pitch/img/repo-health.png" type="Texture" id=8]
 [ext_resource path="res://src/slide/widgets/Footer.tscn" type="PackedScene" id=9]
 
-[node name="Godot_is_in_great_shape" index="0" instance=ExtResource( 1 )]
+[node name="Open_Source" instance=ExtResource( 1 )]
 
 [node name="Column" parent="." index="1" instance=ExtResource( 2 )]
 anchor_right = 0.0
