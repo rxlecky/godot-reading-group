@@ -10,7 +10,7 @@
 [ext_resource path="res://content/power_pitch/img/repo-health.png" type="Texture" id=8]
 [ext_resource path="res://src/slide/widgets/Footer.tscn" type="PackedScene" id=9]
 
-[node name="Godot_is_in_great_shape" instance=ExtResource( 1 )]
+[node name="Godot_is_in_great_shape" index="0" instance=ExtResource( 1 )]
 
 [node name="Column" parent="." index="1" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -22,7 +22,7 @@ margin_bottom = 1080.0
 anchor_right = 0.0
 margin_right = 1921.0
 margin_bottom = 210.0
-title = ""
+title = "Open Source"
 
 [node name="Body" parent="Column" index="1" instance=ExtResource( 4 )]
 anchor_right = 0.0
@@ -36,6 +36,12 @@ margin_bottom = 1080.0
 [node name="TextBox2" parent="Column/Body/Row" index="0" instance=ExtResource( 6 )]
 margin_right = 639.0
 margin_bottom = 870.0
+text = "- [color=#26BFE3]Free Software[/color] built by [color=#26BFE3]hundreds of people[/color]
+- The fastest-growing game technology on GitHub:
+
+- [color=#02E180]1024+[/color] contributors
+- 24 000+ commits
+- 26 000+ stars"
 
 [node name="Picture" parent="Column/Body/Row" index="1" instance=ExtResource( 7 )]
 anchor_right = 0.0

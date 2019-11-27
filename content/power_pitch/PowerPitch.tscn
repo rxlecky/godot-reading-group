@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/presentation/Presentation.tscn" type="PackedScene" id=1]
 [ext_resource path="res://content/power_pitch/slides/Title.tscn" type="PackedScene" id=2]
-[ext_resource path="res://content/power_pitch/slides/Extra_Notes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://content/power_pitch/slides/Modular.tscn" type="PackedScene" id=3]
 [ext_resource path="res://content/power_pitch/slides/All-in-one_package.tscn" type="PackedScene" id=5]
 [ext_resource path="res://content/power_pitch/slides/Godot_is_in_great_shape.tscn" type="PackedScene" id=11]
 [ext_resource path="res://content/power_pitch/slides/Thank_you.tscn" type="PackedScene" id=14]
@@ -19,9 +19,9 @@ margin_bottom = -1.0
 visible = false
 
 [node name="Godot_is_in_great_shape" parent="Slides" index="2" instance=ExtResource( 11 )]
-visible = false
 
-[node name="Extra_Notes" parent="Slides" index="3" instance=ExtResource( 3 )]
+[node name="Modular" parent="Slides" index="3" instance=ExtResource( 3 )]
+visible = false
 
 [node name="Thank_you" parent="Slides" index="4" instance=ExtResource( 14 )]
 visible = false

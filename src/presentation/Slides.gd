@@ -82,18 +82,19 @@ func _display(slide_index : int) -> void:
 
 
 func update_translations() -> void:
-	var translations: PoolStringArray = ProjectSettings.get_setting("locale/translations")
-	if not translations or translations.size() == 0:
-		return
-
-	for node in get_tree().get_nodes_in_group("translate"):
-		var node_uid: = get_translation_uid(node)
-		var translatable_properties: String = node.get_translation_data()
-		for key in translatable_properties:
-			var string_uid: String = node_uid + "_" + key
-			node.set(key, tr(string_uid))
-		if node.has_method('translate'):
-			node.translate()
+	pass
+#	var translations: PoolStringArray = ProjectSettings.get_setting("locale/translations")
+#	if not translations or translations.size() == 0:
+#		return
+#
+#	for node in get_tree().get_nodes_in_group("translate"):
+#		var node_uid: = get_translation_uid(node)
+#		var translatable_properties: String = node.get_translation_data()
+#		for key in translatable_properties:
+#			var string_uid: String = node_uid + "_" + key
+#			node.set(key, tr(string_uid))
+#		if node.has_method('translate'):
+#			node.translate()
 
 
 func get_translation_uid(node: Node) -> String:

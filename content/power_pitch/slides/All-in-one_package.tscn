@@ -31,7 +31,7 @@ margin_bottom = 1080.0
 anchor_right = 0.0
 margin_right = 1921.0
 margin_bottom = 210.0
-title = ""
+title = "All-in-One Package"
 
 [node name="Body" parent="Column" index="1" instance=ExtResource( 4 )]
 anchor_right = 0.0
@@ -45,6 +45,11 @@ margin_bottom = 940.0
 [node name="TextBox" parent="Column/Body/Row" index="0" instance=ExtResource( 6 )]
 margin_right = 639.0
 margin_bottom = 730.0
+text = "- [color=#E3266F]Code editor[/color] with embedded docs
+- [color=#02E180]Shader[/color] editor, visual and code
+- [color=#26BFE3]Animation[/color] editor with 2d rigging
+- And much more built-in
+"
 
 [node name="PictureSlideshow" parent="Column/Body/Row" index="1" instance=ExtResource( 7 )]
 anchor_right = 0.0
