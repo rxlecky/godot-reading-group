@@ -34,6 +34,8 @@ margin_bottom = 1080.0
 [node name="TextBox2" parent="Column/Body/Row" index="0" instance=ExtResource( 6 )]
 margin_right = 1917.0
 margin_bottom = 870.0
+text = "- Super fast iteration times = great prototypes
+- Live code & asset updates (no restarting!)"
 
 [node name="TextureRect" type="TextureRect" parent="Column/Body/Row" index="1"]
 margin_left = 1921.0

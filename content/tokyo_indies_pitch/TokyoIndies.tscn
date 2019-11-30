@@ -5,13 +5,14 @@
 [ext_resource path="res://src/presentation/Presentation.tscn" type="PackedScene" id=3]
 [ext_resource path="res://content/power_pitch/slides/CodeFreely.tscn" type="PackedScene" id=4]
 [ext_resource path="res://content/power_pitch/slides/State_of_the_art_3d_engine.tscn" type="PackedScene" id=5]
-[ext_resource path="res://content/power_pitch/slides/All-in-one_package.tscn" type="PackedScene" id=6]
+[ext_resource path="res://content/power_pitch/slides/EmbeddedDocs.tscn" type="PackedScene" id=6]
 [ext_resource path="res://content/tokyo_indies_pitch/slides/Intro_Nathan.tscn" type="PackedScene" id=7]
 [ext_resource path="res://content/power_pitch/slides/How_to_get_started.tscn" type="PackedScene" id=8]
 [ext_resource path="res://content/tokyo_indies_pitch/slides/Thank_you_tokyo_indies.tscn" type="PackedScene" id=9]
 [ext_resource path="res://content/tokyo_indies_pitch/slides/ModularAndExtensible.tscn" type="PackedScene" id=10]
 [ext_resource path="res://content/tokyo_indies_pitch/slides/TokyoIndiesTitle.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/theme/godot.theme" type="Theme" id=12]
+
 
 
 [sub_resource type="GDScript" id=1]

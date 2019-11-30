@@ -34,12 +34,10 @@ margin_bottom = 1080.0
 [node name="TextBox2" parent="Column/Body/Row" index="0" instance=ExtResource( 6 )]
 margin_right = 1917.0
 margin_bottom = 870.0
-text = "- These slides were made in Godot! (and forked from GDQuest)
-- Engine is only 25MB, and starts up in 10s
+text = "- These slides were made in Godot!
+- Engine is 25MB, starts up in < 10s
 - Empty project build is 30MB
-
-- During jam we had to often reload the editor, didn't matter though!
-- Text scenes are very easy to hand edit"
+"
 
 [node name="TextureRect" type="TextureRect" parent="Column/Body/Row" index="1"]
 margin_left = 1921.0
