@@ -8,7 +8,7 @@
 [ext_resource path="res://src/slide/widgets/TextBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/slide/widgets/Footer.tscn" type="PackedScene" id=9]
 
-[node name="Node" instance=ExtResource( 1 )]
+[node name="Node" index="0" instance=ExtResource( 1 )]
 
 [node name="Column" parent="." index="1" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -20,7 +20,7 @@ margin_bottom = 1080.0
 anchor_right = 0.0
 margin_right = 1921.0
 margin_bottom = 210.0
-title = "Waht is a Scene"
+title = "What is a Scene"
 
 [node name="Body" parent="Column" index="1" instance=ExtResource( 4 )]
 anchor_right = 0.0
@@ -34,7 +34,10 @@ margin_bottom = 940.0
 [node name="TextBox2" parent="Column/Body/Row" index="0" instance=ExtResource( 6 )]
 margin_right = 1917.0
 margin_bottom = 730.0
-text = "SCENES"
+rect_pivot_offset = Vector2( 1739.47, 642.471 )
+text = "- Independent structures
+- (Sub)trees of nodes
+- Dynamic instancing"
 
 [node name="TextureRect" type="TextureRect" parent="Column/Body/Row" index="1"]
 margin_left = 1921.0
