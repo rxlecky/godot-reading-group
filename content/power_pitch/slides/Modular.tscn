@@ -35,8 +35,8 @@ margin_bottom = 1080.0
 margin_right = 1917.0
 margin_bottom = 870.0
 text = "- These slides were made in Godot!
-- Engine is 25MB, starts up in < 10s
-- Empty project build is 30MB
+- Engine is 25MB, starts up in < 10s (vs > 20s in Unity)
+- Empty project build is 30MB (vs 48MB in Unity)
 "
 
 [node name="TextureRect" type="TextureRect" parent="Column/Body/Row" index="1"]

@@ -46,7 +46,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 643.0
 margin_right = 1921.0
-margin_bottom = 870.0
+margin_bottom = 693.0
 texture = ExtResource( 8 )
 
 [node name="Footer2" parent="Column" index="2" instance=ExtResource( 9 )]
