@@ -7,7 +7,7 @@
 [ext_resource path="res://src/slide/layout/Row.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/slide/widgets/TextBox.tscn" type="PackedScene" id=6]
 
-[node name="Thank_you" index="0" instance=ExtResource( 1 )]
+[node name="Thank_you" instance=ExtResource( 1 )]
 
 [node name="Column" parent="." index="1" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -17,7 +17,7 @@ margin_bottom = 1080.0
 
 [node name="Header2" parent="Column" index="0" instance=ExtResource( 3 )]
 anchor_right = 0.0
-margin_right = 1920.0
+margin_right = 1921.0
 margin_bottom = 210.0
 title = "Thank you"
 
@@ -25,7 +25,7 @@ title = "Thank you"
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 210.0
-margin_right = 1920.0
+margin_right = 1921.0
 margin_bottom = 1080.0
 
 [node name="Row" parent="Column/Body" index="0" instance=ExtResource( 5 )]

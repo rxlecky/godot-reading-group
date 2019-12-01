@@ -34,9 +34,10 @@ margin_bottom = 940.0
 [node name="TextBox" parent="Column/Body/Row" index="0" instance=ExtResource( 6 )]
 margin_right = 1921.0
 margin_bottom = 730.0
-text = "- Philosphy
+text = "- Godot as a project
 - Introduction to engine concepts
-- "
+- Prototyping features
+- Demos"
 
 [node name="Footer" parent="Column" index="2" instance=ExtResource( 18 )]
 visible = true
