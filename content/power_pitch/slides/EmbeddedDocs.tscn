@@ -10,7 +10,7 @@
 [ext_resource path="res://content/power_pitch/img/unity-reference.png" type="Texture" id=9]
 [ext_resource path="res://src/slide/widgets/Footer.tscn" type="PackedScene" id=18]
 
-[node name="EmbeddedDocs" index="0" instance=ExtResource( 1 )]
+[node name="EmbeddedDocs" instance=ExtResource( 1 )]
 
 [node name="Column" parent="." index="1" instance=ExtResource( 2 )]
 anchor_right = 0.0
