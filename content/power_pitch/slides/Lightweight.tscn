@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/slide/Slide.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/slide/widgets/Column.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/slide/widgets/Header.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/slide/widgets/Body.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/slide/widgets/TextBox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/slide/widgets/Footer.tscn" type="PackedScene" id=9]
+
+[node name="Modular" index="0" instance=ExtResource( 1 )]
+
+[node name="Column" parent="." index="1" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1921.0
+margin_bottom = 1080.0
+
+[node name="HeaderImage" parent="Column" index="0" instance=ExtResource( 3 )]
+anchor_right = 0.0
+margin_right = 1921.0
+margin_bottom = 210.0
+title = "Lightweight"
+
+[node name="Body" parent="Column" index="1" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 210.0
+margin_right = 1921.0
+margin_bottom = 1080.0
+
+[node name="TextBox2" parent="Column/Body" index="0" instance=ExtResource( 6 )]
+margin_top = -2.39166
+margin_right = 1309.0
+margin_bottom = 867.608
+
+[node name="ColorRect" type="ColorRect" parent="Column/Body" index="1"]
+margin_left = 1088.0
+margin_top = 169.0
+margin_right = 1228.0
+margin_bottom = 758.0
+color = Color( 0.501961, 0.0901961, 0.164706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Column/Body" index="2"]
+margin_left = 841.0
+margin_top = 286.0
+margin_right = 981.0
+margin_bottom = 763.0
+color = Color( 0.670588, 0.596078, 0.176471, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="Column/Body" index="3"]
+margin_left = 598.656
+margin_top = 752.328
+margin_right = 738.656
+margin_bottom = 756.328
+color = Color( 0.317647, 0.709804, 0.435294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Column/Body" index="4"]
+margin_left = 558.896
+margin_top = 764.37
+margin_right = 787.896
+margin_bottom = 840.37
+text = "Godot: 25MB"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Column/Body" index="5"]
+margin_left = 810.964
+margin_top = 763.501
+margin_right = 1039.96
+margin_bottom = 839.501
+text = "Unity: 3.5GB"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Column/Body" index="6"]
+margin_left = 1050.12
+margin_top = 763.185
+margin_right = 1279.12
+margin_bottom = 839.185
+text = "Unreal: ?.?GB"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Column/Body" index="7"]
+margin_left = 799.387
+margin_top = 48.2931
+margin_right = 1007.39
+margin_bottom = 110.293
+rect_scale = Vector2( 1.2, 1.2 )
+text = "Editor sizes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Footer2" parent="Column" index="2" instance=ExtResource( 9 )]
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 940.0
+margin_right = 1921.0
+margin_bottom = 1080.0
