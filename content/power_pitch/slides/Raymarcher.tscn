@@ -290,7 +290,9 @@ vec4 getSceneColor(vec2 uv, float iTime)
 void fragment() {
 	float hFOV = 1.0;
 
-	vec3 col = getSceneColor(UV*2.0-1.0, TIME).rgb;
+	vec2 uv = UV*2.0-1.0;
+	uv.x *= (float(textureSize(SCREEN_TEXTURE, 0).x)/float(textureSize(SCREEN_TEXTURE, 0).y));
+	vec3 col = getSceneColor(uv, TIME).rgb;
 
 	vec2 screenCoord = UV;
 

@@ -15,7 +15,7 @@
 [ext_resource path="res://content/power_pitch/slides/Prototyping.tscn" type="PackedScene" id=13]
 [ext_resource path="res://content/power_pitch/slides/Thank_you.tscn" type="PackedScene" id=14]
 
-[node name="PowerPitch" instance=ExtResource( 1 )]
+[node name="PowerPitch" index="0" instance=ExtResource( 1 )]
 
 [node name="Slides" parent="." index="0"]
 margin_top = -1.0
@@ -56,8 +56,7 @@ margin_top = -1.948
 margin_bottom = -1.948
 
 [node name="Raymarcher" parent="Slides" index="11" instance=ExtResource( 9 )]
-margin_left = 1.0
-margin_right = 2.0
+margin_right = 0.00012207
 
 [node name="Thank_you" parent="Slides" index="12" instance=ExtResource( 14 )]
 visible = false
