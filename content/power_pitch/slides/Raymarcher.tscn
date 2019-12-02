@@ -325,7 +325,7 @@ shader_param/ENABLE_SHADOWS = 1
 shader_param/SHADOW_FALLOFF = 0.05
 shader_param/SHADOW_OPACITY = 0.8
 
-[node name="CodeFreely" index="0" instance=ExtResource( 1 )]
+[node name="CodeFreely" instance=ExtResource( 1 )]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 material = SubResource( 2 )

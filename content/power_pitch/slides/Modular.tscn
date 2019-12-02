@@ -16,7 +16,7 @@ anchor_bottom = 0.0
 margin_right = 1921.0
 margin_bottom = 1080.0
 
-[node name="Header2" parent="Column" index="0" instance=ExtResource( 3 )]
+[node name="HeaderImage" parent="Column" index="0" instance=ExtResource( 3 )]
 anchor_right = 0.0
 margin_right = 1921.0
 margin_bottom = 210.0
