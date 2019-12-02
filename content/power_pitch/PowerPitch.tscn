@@ -41,14 +41,11 @@ margin_right = 0.0
 [node name="GDScript" parent="Slides" index="7" instance=ExtResource( 7 )]
 
 [node name="Embedded_Docs" parent="Slides" index="8" instance=ExtResource( 5 )]
-visible = false
 margin_right = 0.00012207
 
 [node name="Prototyping" parent="Slides" index="9" instance=ExtResource( 13 )]
-visible = false
 
 [node name="Jam_Lessons" parent="Slides" index="10" instance=ExtResource( 12 )]
-visible = false
 margin_top = -1.948
 margin_bottom = -1.948
 

@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://src/slide/Slide.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/theme/godot.theme" type="Theme" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://content/power_pitch/slides/Sprite.gd" type="Script" id=3]
+[ext_resource path="res://content/power_pitch/slides/TextScroller.gd" type="Script" id=4]
+[ext_resource path="res://assets/fonts/source-code-pro-bold.otf" type="DynamicFontData" id=5]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -325,11 +327,345 @@ shader_param/ENABLE_SHADOWS = 1
 shader_param/SHADOW_FALLOFF = 0.05
 shader_param/SHADOW_OPACITY = 0.8
 
-[node name="CodeFreely" instance=ExtResource( 1 )]
+[sub_resource type="DynamicFont" id=3]
+size = 32
+use_filter = true
+font_data = ExtResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="CodeFreely" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1.0
+theme = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 2 )
 position = Vector2( 960, 540 )
 scale = Vector2( 30, 16.9 )
 texture = ExtResource( 2 )
 script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 800.0
+margin_bottom = 1100.0
+rect_min_size = Vector2( 800, 1100 )
+color = Color( 0.109804, 0.109804, 0.109804, 0.537255 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+margin_left = 15.0
+margin_right = 790.0
+margin_bottom = 6714.0
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 0.47451, 0.960784, 0.572549, 1 )
+text = "shader_type canvas_item;
+
+uniform float camOrbitX = 0.0;
+uniform float camOrbitY = 0.0;
+uniform float zoom = 0.0;
+
+uniform int ENABLE_POST_PROCESSING = 1;
+uniform int ENABLE_CAMERA_MOVEMENT = 0;
+uniform int ENABLE_SHADOWS = 1;
+uniform float SHADOW_FALLOFF = 0.05;
+uniform float SHADOW_OPACITY = 0.8;
+
+float sdSphere(vec3 p, float r)
+{
+    return length(p)-r;
+}
+
+float sdBox(vec3 p, vec3 size)
+{
+    vec3 d = abs(p) - size;
+    return min(max(d.x, max(d.y, d.z)), 0.0) + length(max(d, 0.0));
+}
+
+float sdTorus(vec3 p, vec2 radii)
+{
+    return length(vec2(length(p.xz) - radii.x, p.y)) - radii.y;
+}
+
+float sdPlane(vec3 p, vec4 n)
+{
+    return dot(p, n.xyz) + n.w;
+}
+
+
+float opS(float d1, float d2)
+{
+    return max(-d2, d1);
+}
+
+vec2 opU(vec2 d1, vec2 d2)
+{
+	return (d1.x < d2.x) ? d1 : d2;
+}
+
+// polynomial smooth min (k = 0.1);
+float sminCubic(float a, float b, float k)
+{
+    float h = max(k-abs(a-b), 0.0);
+    return min(a, b) - h*h*h/(6.0*k*k);
+}
+
+vec2 opBlend(vec2 d1, vec2 d2)
+{
+    float k = 2.0;
+    float d = sminCubic(d1.x, d2.x, k);
+    float m = mix(d1.y, d2.y, clamp(d1.x-d,0.0,1.0));
+    return vec2(d, m);
+}
+
+
+//------------------------------------------------------------------
+
+vec2 SDF(vec3 pos, float iTime)
+{
+    vec2 res =         vec2(sdSphere(pos-vec3(3.5,-0.5,10), 2.5),    0.1);
+    res = opBlend(res, vec2(sdSphere(pos-vec3(-3.5, -0.5, 10), 2.5), 2.0));
+    res = opBlend(res, vec2(sdSphere(pos-vec3(0, sin(iTime*2.0)*0.4+4., 10), 3.0),      5.0));
+    res = opBlend(res, vec2(sdSphere(pos-vec3(0, sin(1.0+iTime*2.5)*0.4-3.5, 10), 2.0), 8.0));
+    res = opBlend(res, vec2(sdSphere(pos-vec3(0, -0.75, 8), 1.3),    1.0));
+    res = opU(res, vec2(sdPlane(pos, vec4(0, 1.4, 0, 10)),           -0.5));
+    
+    vec2 shapeA = vec2(sdBox(pos-vec3(9, -3.0, 8), vec3(1.5)),  1.5);
+    vec2 shapeB = vec2(sdSphere(pos-vec3(9, -3.0, 8), 1.5),        3.0);
+    res = opU(res, mix(shapeA, shapeB, sin(iTime)*1.0));
+    
+    float radius = (sin(iTime*1.6)*0.3+0.15)+1.3;
+    res = opU(res, vec2(opS(sdBox(pos -  vec3(-9, 4.5, 12), vec3(1,1,1)),     
+                            sdSphere(pos-vec3(-9, 4.5, 12), radius)),8.0));
+
+    return res;
+}
+
+vec3 calcNormal(vec3 pos, float iTime)
+{
+	// Center sample
+    float c = SDF(pos, iTime).x;
+	// Use offset samples to compute gradient / normal
+    vec2 eps_zero = vec2(0.001, 0.0);
+    return normalize(vec3(
+        SDF(pos + eps_zero.xyy, iTime).x,
+        SDF(pos + eps_zero.yxy, iTime).x,
+        SDF(pos + eps_zero.yyx, iTime).x) - c);
+}
+
+vec2 rand22(vec2 i) {
+    return fract(sin(vec2(dot(i,vec2(127.1,311.7)),dot(i,vec2(269.5,183.3))))*43758.5453);
+}
+
+// IntersectionResult
+//{
+//    float minDist;
+//    float mat;
+//    int steps;
+//};
+
+void castRay(float iTime, vec3 rayOrigin, vec3 rayDir, out float minDist, out float mat, out int steps)
+{
+    float tmax = 100.0;
+    float t = 0.0;
+    
+    mat = -1.0;
+    
+    for (steps = 0; steps < 128; steps++)
+    {
+        vec2 res = SDF(rayOrigin + rayDir * t, iTime);
+        if (res.x < (0.0001*t))
+        {
+            minDist = t;
+            return;
+        }
+        else if (res.x > tmax)
+        {
+            mat = -1.0;
+            minDist = -1.0;
+            return;
+        }
+        t += res.x;
+        mat = res.y;
+    }
+    
+    minDist = t;
+}
+
+vec3 triplanarMap(vec3 surfacePos, vec3 normal, float scale)
+{
+	// Take projections along 3 axes, sample texture values from each projection, and stack into a matrix
+//	mat3 triMapSamples = mat3(
+//		texture(iChannel0, surfacePos.yz * scale).rgb,
+//		texture(iChannel0, surfacePos.xz * scale).rgb,
+//		texture(iChannel0, surfacePos.xy * scale).rgb
+//		);
+
+	// Weight three samples by absolute value of normal components
+	return abs(normal);
+}
+
+// http://iquilezles.org/www/articles/checkerfiltering/checkerfiltering.htm
+float checkersGradBox(vec2 p)
+{
+    vec2 w = fwidth(p) + 0.001;
+    vec2 i = 2.0*(abs(fract((p-0.5*w)*0.5)-0.5)-abs(fract((p+0.5*w)*0.5)-0.5))/w;
+    return clamp(0.5 - 0.5*i.x*i.y,0.0,1.0);
+}
+
+const vec3 fogColor = vec3(0.30, 0.36, 0.60);
+
+vec3 applyFog(vec3 rgb, float dist)
+{
+    float startDist = 80.0;
+    float fogAmount = 1.0 - exp(-(dist-8.0) * (1.0/startDist));
+    return mix(rgb, fogColor, fogAmount);
+}
+
+float rand(vec2 co)
+{
+  return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+}
+
+//https://www.shadertoy.com/view/ll2GD3
+vec3 pal( in float t, in vec3 a, in vec3 b, in vec3 c, in vec3 d )
+{
+    return a + b*cos( 6.28318*(c*t+d) );
+}
+
+vec3 render(vec3 rayOrigin, vec3 rayDir, float iTime)
+{
+    vec3 col = fogColor - rayDir.y * 0.4;
+	float minDist, mat;
+	int stepsI;
+    castRay(iTime, rayOrigin, rayDir, minDist, mat, stepsI);
+    float t = minDist;
+    float m = mat;
+    float steps = float(stepsI);
+
+//#if SHOW_STEP_COUNT
+//    return vec3(steps/350., 0.0, 0.0);
+//#endif
+    
+    vec3 N = vec3(0.0, 1.0, 0.0);
+    vec3 L = normalize(vec3(sin(iTime), 0.9, -0.5));
+
+    if (m > -1.0)
+    {
+        vec3 pos = rayOrigin + rayDir * t;
+        
+        if (m > -0.5)
+        {
+            N = calcNormal(pos, iTime);
+            
+            //col = pal(m*0.05, vec3(0.05,0.2,0.2),vec3(0.2,0.4,0.5),vec3(0.39,0.6,0.7),vec3(0.1,0.3,0.90));
+            col = vec3(0.18*m, 0.6-0.05*m, 0.2+0.2*N.y)*0.8+0.2;
+			
+        	// L is vector from surface point to light, N is surface normal. N and L must be normalized!
+            float NoL = max(dot(N, L), 0.0);
+            vec3 LDirectional = vec3(1.25, 1.2, 0.8) * NoL;
+            vec3 LAmbient = vec3(0.03, 0.04, 0.1);
+            vec3 diffuse = col * (LDirectional + LAmbient);
+            
+            vec3 texSample = triplanarMap(pos, N, 0.2);
+            // Only apply texture to materials > 4.5
+        	col = mix(diffuse, diffuse*texSample, step(4.5, m));
+            
+            // Visualize normals:
+          	//col = N * vec3(0.5) + vec3(0.5);
+        }
+        else
+        {
+            float grid = checkersGradBox(pos.xz*0.2) * 0.03 + 0.1;
+            col = vec3(grid, grid, grid);
+            
+			if (ENABLE_SHADOWS != 0)
+			{
+	            float shadow = 0.0;
+	            float shadowRayCount = 2.0;
+	            for (float s = 0.0; s < shadowRayCount; s++)
+	            {
+	                vec3 shadowRayOrigin = pos + N * 0.01;
+	                float r = rand(vec2(rayDir.xy)) * 2.0 - 1.0;
+	                vec3 shadowRayDir = L + vec3(1.0 * SHADOW_FALLOFF) * r;
+					float shMinDist, shMat;
+					int shSteps;
+	                castRay(iTime, shadowRayOrigin, shadowRayDir, shMinDist, shMat, shSteps);
+	                if (shMat != -1.0)
+	                {
+	                    shadow += 1.0;
+	                }
+	            }
+	            
+	    		vec3 cshadow = pow(vec3(shadow), vec3(1.0, 1.2, 1.5));
+	            col = mix(col, col*cshadow*(1.0-SHADOW_OPACITY), shadow/shadowRayCount);
+			}
+        }
+
+        col = applyFog(col, pos.z);
+    }
+    
+    return col;
+}
+
+vec3 getCameraRayDir(vec2 uv, vec3 camPos, vec3 camTarget)
+{
+	vec3 camForward = normalize(camTarget - camPos);
+	vec3 camRight = normalize(cross(vec3(0.0, 1.0, 0.0), camForward));
+	vec3 camUp = normalize(cross(camForward, camRight));
+
+    float fPersp = 2.0;
+	vec3 vDir = normalize(uv.x * camRight + uv.y * camUp + camForward * fPersp);
+
+	// vec3 rd = normalize(vec3(UV.x*2.0-1.0*hFOV, UV.y*2.0-1.0, 1.0));
+
+	return vDir;
+}
+
+vec4 getSceneColor(vec2 uv, float iTime)
+{ 
+    vec3 camPos = vec3(camOrbitX, camOrbitY, -15.0 + zoom);
+	if (ENABLE_CAMERA_MOVEMENT != 0) {
+	    camPos += vec3(sin(iTime*0.5)*0.5, cos(iTime*0.5)*0.1, 0.0);
+	}
+    vec3 at = vec3(0, 0, 0);
+    
+    vec3 rayDir = getCameraRayDir(vec2(uv.x, -uv.y), camPos, at);
+    
+    vec3 col = render(camPos, rayDir, iTime);
+    
+    return vec4(col, 1.0);
+}
+    
+void fragment() {
+	float hFOV = 1.0;
+
+	vec2 uv = UV*2.0-1.0;
+	uv.x *= (float(textureSize(SCREEN_TEXTURE, 0).x)/float(textureSize(SCREEN_TEXTURE, 0).y));
+	vec3 col = getSceneColor(uv, TIME).rgb;
+
+	vec2 screenCoord = UV;
+
+    // Vignette
+    float radius = 0.8;
+    float d = smoothstep(radius, radius-0.5, length(screenCoord-vec2(0.5)));
+    col = mix(col, col * d, 0.5);
+    
+    // Contrast
+    float constrast = 0.3;
+    col = mix(col, smoothstep(0.0, 1.0, col), constrast);
+    
+    // Colour mapping
+    col *= vec3(0.90,0.96,1.1);
+	
+	// Gamma correction
+	col = pow(col, vec3(0.4545));
+
+	COLOR = vec4(clamp(col,0,1), 1.0);
+}"
+scroll_active = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
