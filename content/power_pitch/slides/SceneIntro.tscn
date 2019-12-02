@@ -9,7 +9,7 @@
 [ext_resource path="res://content/power_pitch/img/scene-structure.png" type="Texture" id=7]
 [ext_resource path="res://src/slide/widgets/Footer.tscn" type="PackedScene" id=9]
 
-[node name="Node" index="0" instance=ExtResource( 1 )]
+[node name="Node" instance=ExtResource( 1 )]
 
 [node name="Column" parent="." index="1" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -36,7 +36,16 @@ margin_bottom = 870.0
 rect_pivot_offset = Vector2( 1739.47, 642.471 )
 text = "How you [color=#3E9E1E]assemble data[/color]"
 
-[node name="TextureRect2" type="TextureRect" parent="Column/Body" index="1"]
+[node name="TextBox3" parent="Column/Body" index="1" instance=ExtResource( 6 )]
+margin_left = 972.0
+margin_top = 417.0
+margin_right = 1944.0
+margin_bottom = 841.0
+rect_pivot_offset = Vector2( 1739.47, 642.471 )
+text = "
+An instancable object (prefab on steroids)"
+
+[node name="TextureRect2" type="TextureRect" parent="Column/Body" index="2"]
 margin_left = 40.0
 margin_top = 159.0
 margin_right = 2003.0
@@ -48,7 +57,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Column/Body" index="2"]
+[node name="TextureRect" type="TextureRect" parent="Column/Body" index="3"]
 margin_left = 1010.13
 margin_top = 32.8577
 margin_right = 1892.13

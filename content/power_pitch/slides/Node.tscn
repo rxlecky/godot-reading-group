@@ -9,7 +9,7 @@
 [ext_resource path="res://content/power_pitch/img/scene-hierarchy.jpg" type="Texture" id=7]
 [ext_resource path="res://src/slide/widgets/Footer.tscn" type="PackedScene" id=9]
 
-[node name="Node_Intro" index="0" instance=ExtResource( 1 )]
+[node name="Node_Intro" instance=ExtResource( 1 )]
 
 [node name="Column" parent="." index="1" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -33,10 +33,12 @@ margin_right = 1921.0
 margin_bottom = 1080.0
 
 [node name="TextBox2" parent="Column/Body" index="0" instance=ExtResource( 6 )]
+margin_top = -2.27203
 margin_right = 1352.0
-margin_bottom = 540.0
+margin_bottom = 537.728
 text = "- Elementary building block of [color=#D8382D]data[/color]
-- Collection of properties"
+- Collection of properties
+- Godot equivilent of \"component\""
 
 [node name="TextureRect" type="TextureRect" parent="Column/Body" index="1"]
 margin_left = 1347.49
