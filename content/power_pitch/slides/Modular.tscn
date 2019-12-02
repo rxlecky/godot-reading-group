@@ -8,7 +8,7 @@
 [ext_resource path="res://src/slide/widgets/TextBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/slide/widgets/Footer.tscn" type="PackedScene" id=9]
 
-[node name="Modular" instance=ExtResource( 1 )]
+[node name="Modular" index="0" instance=ExtResource( 1 )]
 
 [node name="Column" parent="." index="1" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -33,7 +33,7 @@ margin_bottom = 1080.0
 margin_right = 1914.0
 margin_bottom = 870.0
 text = "- Systems can be disabled individually
-- Non-core functionality is put into Plugins (similar to Unity packages)"
+- Non-core functionality is put into Plugins"
 
 [node name="TextureRect" type="TextureRect" parent="Column/Body" index="1"]
 margin_left = 495.543

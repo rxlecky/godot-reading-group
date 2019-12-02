@@ -20,7 +20,7 @@ margin_bottom = 1080.0
 anchor_right = 0.0
 margin_right = 1921.0
 margin_bottom = 210.0
-title = "Talk Outline"
+title = "Outline"
 
 [node name="Body" parent="Column" index="1" instance=ExtResource( 4 )]
 anchor_right = 0.0
@@ -34,7 +34,7 @@ margin_bottom = 940.0
 [node name="TextBox" parent="Column/Body/Row" index="0" instance=ExtResource( 6 )]
 margin_right = 1921.0
 margin_bottom = 730.0
-text = "- Godot as a project
+text = "- Godot's history
 - Introduction to engine concepts
 - Prototyping features
 - Demos"
