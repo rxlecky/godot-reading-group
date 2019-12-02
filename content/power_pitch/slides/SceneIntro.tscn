@@ -36,23 +36,24 @@ margin_bottom = 870.0
 rect_pivot_offset = Vector2( 1739.47, 642.471 )
 text = "How you [color=#3E9E1E]assemble data[/color]"
 
-[node name="TextureRect" type="TextureRect" parent="Column/Body" index="1"]
-margin_left = 1010.13
-margin_top = 32.8577
-margin_right = 1892.13
-margin_bottom = 390.858
-texture = ExtResource( 7 )
+[node name="TextureRect2" type="TextureRect" parent="Column/Body" index="1"]
+margin_left = 40.0
+margin_top = 159.0
+margin_right = 2003.0
+margin_bottom = 1523.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect2" type="TextureRect" parent="Column/Body" index="2"]
-margin_left = 296.0
-margin_top = 22.0
-margin_right = 1492.0
-margin_bottom = 909.0
-texture = ExtResource( 5 )
+[node name="TextureRect" type="TextureRect" parent="Column/Body" index="2"]
+margin_left = 1010.13
+margin_top = 32.8577
+margin_right = 1892.13
+margin_bottom = 390.858
+texture = ExtResource( 7 )
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
