@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/slide/Slide.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/slide/widgets/Column.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/slide/widgets/Header.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/slide/widgets/Body.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/slide/layout/Row.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/slide/widgets/TextBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://content/power_pitch/img/gdscript-editor-3.1.jpg" type="Texture" id=8]
 [ext_resource path="res://content/power_pitch/img/unity-reference.png" type="Texture" id=9]
@@ -31,43 +30,36 @@ margin_top = 210.0
 margin_right = 1921.0
 margin_bottom = 940.0
 
-[node name="Row" parent="Column/Body" index="0" instance=ExtResource( 5 )]
+[node name="TextBox" parent="Column/Body" index="0" instance=ExtResource( 6 )]
+margin_right = 1151.0
+margin_bottom = 287.0
+text = "Ctrl+Click types for docs"
 
-[node name="TextBox" parent="Column/Body/Row" index="0" instance=ExtResource( 6 )]
-margin_right = 958.0
-margin_bottom = 730.0
-text = "Ctrl+Click types for docs
+[node name="TextBox2" parent="Column/Body" index="1" instance=ExtResource( 6 )]
+margin_left = 1244.92
+margin_top = 11.0883
+margin_right = 1884.92
+margin_bottom = 364.088
+text = "Unity has links in editor, but not in IDE"
 
-
-
-
-Unity has links in editor, but not in IDE"
-
-[node name="Control" type="Control" parent="Column/Body/Row" index="1"]
-margin_left = 962.0
-margin_right = 1921.0
-margin_bottom = 730.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="Column/Body/Row/Control" index="0"]
-margin_left = -58.0
-margin_top = 7.0
-margin_right = 951.0
-margin_bottom = 456.0
-texture = ExtResource( 8 )
-stretch_mode = 1
+[node name="TextureRect2" type="TextureRect" parent="Column/Body" index="2"]
+margin_left = 1187.13
+margin_top = 388.512
+margin_right = 1900.13
+margin_bottom = 585.512
+texture = ExtResource( 9 )
+stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect2" type="TextureRect" parent="Column/Body/Row/Control" index="1"]
-margin_left = -63.9497
-margin_top = 581.185
-margin_right = 505.05
-margin_bottom = 721.185
-texture = ExtResource( 9 )
-stretch_mode = 1
+[node name="TextureRect" type="TextureRect" parent="Column/Body" index="3"]
+margin_left = -5.0
+margin_top = 216.0
+margin_right = 1163.0
+margin_bottom = 739.0
+texture = ExtResource( 8 )
+stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
