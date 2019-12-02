@@ -4,7 +4,7 @@
 [ext_resource path="res://src/slide/widgets/Column.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/slide/widgets/Header.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/slide/widgets/Body.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/slide/layout/Row.tscn" type="PackedScene" id=5]
+[ext_resource path="res://content/power_pitch/img/modular.png" type="Texture" id=5]
 [ext_resource path="res://src/slide/widgets/TextBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/slide/widgets/Footer.tscn" type="PackedScene" id=9]
 
@@ -29,19 +29,94 @@ margin_top = 210.0
 margin_right = 1921.0
 margin_bottom = 1080.0
 
-[node name="Row" parent="Column/Body" index="0" instance=ExtResource( 5 )]
-
-[node name="TextBox2" parent="Column/Body/Row" index="0" instance=ExtResource( 6 )]
-margin_right = 1917.0
+[node name="TextBox2" parent="Column/Body" index="0" instance=ExtResource( 6 )]
+margin_right = 1309.0
 margin_bottom = 870.0
 text = "- Engine is 25MB, starts up in < 10s
 - Empty project build is 30MB
 "
 
-[node name="TextureRect" type="TextureRect" parent="Column/Body/Row" index="1"]
-margin_left = 1921.0
-margin_right = 1921.0
-margin_bottom = 870.0
+[node name="TextureRect" type="TextureRect" parent="Column/Body" index="1"]
+margin_left = 905.687
+margin_top = 254.946
+margin_right = 1895.69
+margin_bottom = 809.946
+texture = ExtResource( 5 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Column/Body" index="2"]
+margin_left = 614.0
+margin_top = 333.0
+margin_right = 754.0
+margin_bottom = 682.0
+color = Color( 0.501961, 0.0901961, 0.164706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Column/Body" index="3"]
+margin_left = 392.0
+margin_top = 426.0
+margin_right = 532.0
+margin_bottom = 686.0
+color = Color( 0.501961, 0.0901961, 0.164706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="Column/Body" index="4"]
+margin_left = 172.0
+margin_top = 645.0
+margin_right = 312.0
+margin_bottom = 678.0
+color = Color( 0.317647, 0.709804, 0.435294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Column/Body" index="5"]
+margin_left = 132.24
+margin_top = 683.587
+margin_right = 361.24
+margin_bottom = 759.587
+text = "Godot: 25MB"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Column/Body" index="6"]
+margin_left = 362.308
+margin_top = 685.173
+margin_right = 591.308
+margin_bottom = 761.173
+text = "Unity: 3.5GB"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Column/Body" index="7"]
+margin_left = 590.204
+margin_top = 689.274
+margin_right = 819.204
+margin_bottom = 765.274
+text = "Unreal: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Column/Body" index="8"]
+margin_left = 222.24
+margin_top = 264.48
+margin_right = 430.24
+margin_bottom = 326.48
+rect_scale = Vector2( 1.2, 1.2 )
+text = "Editor sizes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Footer2" parent="Column" index="2" instance=ExtResource( 9 )]
 anchor_top = 0.0

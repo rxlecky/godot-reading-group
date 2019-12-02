@@ -9,7 +9,7 @@
 [ext_resource path="res://content/power_pitch/img/scene-hierarchy.jpg" type="Texture" id=7]
 [ext_resource path="res://src/slide/widgets/Footer.tscn" type="PackedScene" id=9]
 
-[node name="Node_Intro" instance=ExtResource( 1 )]
+[node name="Node_Intro" index="0" instance=ExtResource( 1 )]
 
 [node name="Column" parent="." index="1" instance=ExtResource( 2 )]
 anchor_right = 0.0

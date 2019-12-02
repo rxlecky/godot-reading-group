@@ -34,10 +34,10 @@ margin_bottom = 1080.0
 [node name="TextBox2" parent="Column/Body/Row" index="0" instance=ExtResource( 6 )]
 margin_right = 1917.0
 margin_bottom = 870.0
-text = "- We all learnt quickly
+text = "- Mostly hadn't used Godot before, all learnt quickly
 - Close editor, pull, push is fast
 - Lots of readily available features (SimplexNoise)
-- Export is v qck and fails fast
+- Export is very quick
 "
 
 [node name="TextureRect" type="TextureRect" parent="Column/Body/Row" index="1"]
