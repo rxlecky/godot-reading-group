@@ -94,12 +94,23 @@ __meta__ = {
 }
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="Column/Body" index="7"]
-margin_left = 799.387
-margin_top = 48.2931
-margin_right = 1007.39
-margin_bottom = 110.293
+margin_left = 710.803
+margin_top = 48.0
+margin_right = 1035.8
+margin_bottom = 110.0
 rect_scale = Vector2( 1.2, 1.2 )
-text = "Editor sizes"
+text = "Editor binary sizes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Column/Body" index="8"]
+margin_left = 1085.24
+margin_top = 64.8324
+margin_right = 1293.24
+margin_bottom = 126.832
+rect_scale = Vector2( 0.7, 0.7 )
+text = " (*to scale)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
