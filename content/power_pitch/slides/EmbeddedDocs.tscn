@@ -22,6 +22,8 @@ anchor_right = 0.0
 margin_right = 1921.0
 margin_bottom = 210.0
 title = "Embedded Docs"
+subtitle = ""
+font_override = null
 
 [node name="Body" parent="Column" index="1" instance=ExtResource( 4 )]
 anchor_right = 0.0
@@ -54,10 +56,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Column/Body" index="3"]
-margin_left = -5.0
-margin_top = 216.0
-margin_right = 1163.0
-margin_bottom = 739.0
+margin_left = 8.27734
+margin_top = 207.95
+margin_right = 1176.28
+margin_bottom = 730.95
 texture = ExtResource( 8 )
 stretch_mode = 5
 __meta__ = {
@@ -72,3 +74,4 @@ anchor_bottom = 0.0
 margin_top = 940.0
 margin_right = 1921.0
 margin_bottom = 1080.0
+text = ""

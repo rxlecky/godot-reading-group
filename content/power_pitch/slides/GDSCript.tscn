@@ -23,6 +23,8 @@ anchor_right = 0.0
 margin_right = 1921.0
 margin_bottom = 210.0
 title = "GDSCript"
+subtitle = ""
+font_override = null
 
 [node name="Body" parent="Column" index="1" instance=ExtResource( 4 )]
 anchor_right = 0.0
@@ -40,10 +42,10 @@ text = "- Built in scripting language
 "
 
 [node name="TextureRect2" type="TextureRect" parent="Column/Body" index="1"]
-margin_left = 718.991
-margin_top = 653.35
-margin_right = 1962.99
-margin_bottom = 851.35
+margin_left = 696.892
+margin_top = 576.003
+margin_right = 1940.89
+margin_bottom = 774.003
 texture = ExtResource( 7 )
 stretch_mode = 5
 __meta__ = {
@@ -51,10 +53,11 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="Column/Body" index="2"]
+visible = false
 margin_left = 1025.27
-margin_top = -2.05054
+margin_top = -3.27826
 margin_right = 1922.27
-margin_bottom = 867.949
+margin_bottom = 866.721
 texture = ExtResource( 5 )
 stretch_mode = 5
 __meta__ = {
@@ -62,10 +65,10 @@ __meta__ = {
 }
 
 [node name="TextureRect3" type="TextureRect" parent="Column/Body" index="3"]
-margin_left = 20.7833
-margin_top = 296.475
-margin_right = 867.783
-margin_bottom = 683.475
+margin_left = 1048.5
+margin_top = 110.594
+margin_right = 1900.5
+margin_bottom = 528.594
 texture = ExtResource( 8 )
 stretch_mode = 5
 __meta__ = {
@@ -79,3 +82,4 @@ anchor_bottom = 0.0
 margin_top = 940.0
 margin_right = 1921.0
 margin_bottom = 1080.0
+text = ""

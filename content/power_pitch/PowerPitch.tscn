@@ -12,18 +12,19 @@
 [ext_resource path="res://content/power_pitch/slides/Node.tscn" type="PackedScene" id=10]
 [ext_resource path="res://content/power_pitch/slides/Open_Source.tscn" type="PackedScene" id=11]
 [ext_resource path="res://content/power_pitch/slides/JamLessons.tscn" type="PackedScene" id=12]
-[ext_resource path="res://content/power_pitch/slides/Prototyping.tscn" type="PackedScene" id=13]
+[ext_resource path="res://content/power_pitch/slides/Prototyping2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://content/power_pitch/slides/Thank_you.tscn" type="PackedScene" id=14]
 [ext_resource path="res://content/power_pitch/slides/Lightweight.tscn" type="PackedScene" id=15]
 [ext_resource path="res://content/power_pitch/slides/SceneUses.tscn" type="PackedScene" id=16]
 [ext_resource path="res://content/power_pitch/slides/SceneIntro.tscn" type="PackedScene" id=17]
 [ext_resource path="res://content/power_pitch/slides/Recap.tscn" type="PackedScene" id=18]
 
-[node name="PowerPitch" index="0" instance=ExtResource( 1 )]
+[node name="PowerPitch" instance=ExtResource( 1 )]
 
 [node name="Slides" parent="." index="0"]
 margin_top = -1.0
 margin_bottom = -1.0
+skip_animation = false
 
 [node name="Title" parent="Slides" index="0" instance=ExtResource( 2 )]
 margin_right = 0.00012207
@@ -35,14 +36,11 @@ visible = false
 visible = false
 
 [node name="Lightweight" parent="Slides" index="3" instance=ExtResource( 15 )]
-visible = false
 
 [node name="Modular" parent="Slides" index="4" instance=ExtResource( 3 )]
-visible = false
 margin_right = 0.00012207
 
 [node name="Open_Source" parent="Slides" index="5" instance=ExtResource( 11 )]
-visible = false
 margin_right = 0.0
 
 [node name="SceneIntro" parent="Slides" index="6" instance=ExtResource( 17 )]
@@ -65,7 +63,7 @@ visible = false
 visible = false
 margin_right = 0.00012207
 
-[node name="Prototyping" parent="Slides" index="12" instance=ExtResource( 13 )]
+[node name="Prototyping2" parent="Slides" index="12" instance=ExtResource( 13 )]
 visible = false
 
 [node name="Jam_Lessons" parent="Slides" index="13" instance=ExtResource( 12 )]

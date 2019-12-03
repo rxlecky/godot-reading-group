@@ -29,6 +29,8 @@ margin_right = 1909.0
 margin_bottom = 210.0
 rect_min_size = Vector2( 0, 210 )
 title = "Prototyping"
+subtitle = ""
+font_override = null
 
 [node name="Body" parent="VSplitContainer/Column" index="1" instance=ExtResource( 4 )]
 anchor_right = 0.0
@@ -44,9 +46,8 @@ rect_min_size = Vector2( 0, 210 )
 margin_right = 1905.0
 margin_bottom = 870.0
 text = "- Fast iteration times = great prototypes
-- Live code & asset updates (no restarting!)
+- Live code & asset updates
 - Saves changes made at runtime"
-center = false
 
 [node name="TextureRect" type="TextureRect" parent="VSplitContainer/Column/Body/Row" index="1"]
 margin_left = 1909.0
@@ -59,6 +60,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 940.0
 margin_bottom = 1080.0
+text = ""
 
 [node name="JumpDemo" parent="VSplitContainer" index="1" instance=ExtResource( 11 )]
 anchor_right = 0.0
