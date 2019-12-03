@@ -34,21 +34,21 @@ margin_bottom = 1080.0
 [node name="Row" parent="Column/Body" index="0" instance=ExtResource( 5 )]
 
 [node name="TextBox2" parent="Column/Body/Row" index="0" instance=ExtResource( 6 )]
-margin_right = 774.0
-margin_bottom = 900.0
-rect_min_size = Vector2( 774, 900 )
-text = "
-
-- [color=#02E180]1024+[/color] contributors
+margin_top = 180.0
+margin_right = 639.0
+margin_bottom = 690.0
+rect_min_size = Vector2( 639, 510 )
+size_flags_vertical = 4
+text = "- [color=#02E180]1024+[/color] contributors
 - 24 000+ commits
 - 26 000+ stars"
 
 [node name="Picture" parent="Column/Body/Row" index="1" instance=ExtResource( 7 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 778.0
+margin_left = 643.0
 margin_right = 1921.0
-margin_bottom = 900.0
+margin_bottom = 870.0
 texture = ExtResource( 8 )
 
 [node name="Footer2" parent="Column" index="2" instance=ExtResource( 9 )]
