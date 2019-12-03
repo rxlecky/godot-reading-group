@@ -35,10 +35,10 @@ func _gui_input(event: InputEvent) -> void:
 			target_script.source_code = text
 			target_script.reload(true)
 			get_parent().grab_focus()
-			
+
 	elif Input.is_action_just_pressed("ui_cancel"):
 		get_parent().grab_focus()
-	
+
 func _set_target_script(script : Script) -> void:
 	target_script = script
 	if script:

@@ -19,6 +19,8 @@ anchor_right = 0.0
 margin_right = 1921.0
 margin_bottom = 210.0
 title = "To Conclude"
+subtitle = ""
+font_override = null
 
 [node name="Body" parent="Column" index="1" instance=ExtResource( 4 )]
 anchor_right = 0.0
@@ -33,4 +35,4 @@ margin_right = 1916.0
 margin_bottom = 875.0
 text = "- Godot's [color=#AF2F6B]lightweight[/color] design make it a breeze to prototype in
 - [color=#68AF24]GDScript[/color] accelerates productivity with its simplicity
-- [color=#63B9D8]Node-based[/color] scenes empower your creativity"
+- [color=#63B9D8]Node-based[/color] scenes give extreme flexibility"
