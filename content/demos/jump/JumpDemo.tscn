@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://content/power_pitch/slides/Dood2.gd" type="Script" id=1]
 [ext_resource path="res://assets/theme/godot.theme" type="Theme" id=2]
 [ext_resource path="res://content/power_pitch/img/dood.png" type="Texture" id=3]
 [ext_resource path="res://content/demos/jump/script_editor.gd" type="Script" id=4]
-[ext_resource path="res://content/power_pitch/slides/Dood.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 100.0
@@ -80,7 +79,7 @@ target_script = ExtResource( 1 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Level"]
 position = Vector2( 206.507, 507.939 )
-script = ExtResource( 5 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
