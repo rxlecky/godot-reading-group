@@ -29,25 +29,27 @@ margin_right = 1921.0
 margin_bottom = 1080.0
 
 [node name="TextBox2" parent="Column/Body" index="0" instance=ExtResource( 6 )]
-margin_top = -2.39166
+margin_top = -3.75207
 margin_right = 1309.0
-margin_bottom = 867.608
+margin_bottom = 866.248
+text = ""
+center = false
 
 [node name="ColorRect" type="ColorRect" parent="Column/Body" index="1"]
 margin_left = 1088.0
-margin_top = 169.0
+margin_top = 163.559
 margin_right = 1228.0
-margin_bottom = 758.0
+margin_bottom = 763.559
 color = Color( 0.501961, 0.0901961, 0.164706, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect2" type="ColorRect" parent="Column/Body" index="2"]
-margin_left = 841.0
-margin_top = 286.0
-margin_right = 981.0
-margin_bottom = 763.0
+margin_left = 849.162
+margin_top = 685.95
+margin_right = 989.162
+margin_bottom = 761.2
 color = Color( 0.670588, 0.596078, 0.176471, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -55,9 +57,9 @@ __meta__ = {
 
 [node name="ColorRect3" type="ColorRect" parent="Column/Body" index="3"]
 margin_left = 598.656
-margin_top = 752.328
+margin_top = 756.409
 margin_right = 738.656
-margin_bottom = 756.328
+margin_bottom = 757.409
 color = Color( 0.317647, 0.709804, 0.435294, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -65,9 +67,9 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Column/Body" index="4"]
 margin_left = 558.896
-margin_top = 764.37
+margin_top = 765.37
 margin_right = 787.896
-margin_bottom = 840.37
+margin_bottom = 841.37
 text = "Godot: 25MB"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -84,11 +86,12 @@ __meta__ = {
 }
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Column/Body" index="6"]
-margin_left = 1050.12
-margin_top = 763.185
-margin_right = 1279.12
-margin_bottom = 839.185
-text = "Unreal: ?.?GB"
+margin_left = 1050.0
+margin_top = 763.0
+margin_right = 1316.0
+margin_bottom = 839.0
+text = "Unreal: 28.2GB"
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
