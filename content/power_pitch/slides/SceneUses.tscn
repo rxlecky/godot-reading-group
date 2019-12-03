@@ -7,7 +7,7 @@
 [ext_resource path="res://src/slide/widgets/TextBox.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/slide/Slide.tscn" type="PackedScene" id=6]
 
-[node name="Scene Uses" instance=ExtResource( 6 )]
+[node name="DynamicSceneTree" index="0" instance=ExtResource( 6 )]
 
 [node name="Column" parent="." index="1" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -20,7 +20,7 @@ anchor_right = 0.0
 margin_right = 1921.0
 margin_bottom = 210.0
 rect_min_size = Vector2( 1874, 210 )
-title = "Scene Uses"
+title = "Dynamic Scene Tree"
 
 [node name="Body" parent="Column" index="1" instance=ExtResource( 1 )]
 show_behind_parent = true
