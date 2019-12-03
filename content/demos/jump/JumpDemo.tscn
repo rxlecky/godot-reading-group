@@ -1,0 +1,148 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://content/power_pitch/slides/Dood2.gd" type="Script" id=1]
+[ext_resource path="res://assets/theme/godot.theme" type="Theme" id=2]
+[ext_resource path="res://content/power_pitch/img/dood.png" type="Texture" id=3]
+[ext_resource path="res://content/demos/jump/script_editor.gd" type="Script" id=4]
+[ext_resource path="res://content/power_pitch/slides/Dood.gd" type="Script" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 100.0
+height = 251.971
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 962.516, 55.8773 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 52.525, 3073.65 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 190.751, 53.3352 )
+
+[node name="JumpDemo" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -5.65686
+margin_bottom = -5.65686
+rect_min_size = Vector2( 900, 0 )
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+text = "extends KinematicBody2D
+
+const MOVE_SPEED = 1000.0
+const JUMP_FORCE = 1500.0
+const GRAVITY = 100.0
+
+var velocity := Vector2(0, 0)
+
+func _physics_process(delta) -> void:
+	velocity.x = 0
+	if Input.is_action_pressed(\"move_right\"):
+		velocity.x += MOVE_SPEED
+	if Input.is_action_pressed(\"move_left\"):
+		velocity.x -= MOVE_SPEED
+																									#########################
+																									#########################
+																									#########################
+
+	velocity.y += GRAVITY
+	if Input.is_action_just_pressed(\"jump\"):
+		velocity.y -= JUMP_FORCE
+	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
+															#########################
+															#########################
+															#########################
+###############################################################################################################################################
+###############################################################################################################################################
+###############################################################################################################################################
+"
+highlight_current_line = true
+syntax_highlighting = true
+show_line_numbers = true
+highlight_all_occurrences = true
+context_menu_enabled = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+target_script = ExtResource( 1 )
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="Level"]
+position = Vector2( 206.507, 507.939 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Level/KinematicBody2D"]
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/KinematicBody2D"]
+scale = Vector2( 0.772793, 0.772793 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Level"]
+position = Vector2( 967.585, 1018.27 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="Level"]
+position = Vector2( 946.677, -5024.32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D6"]
+shape = SubResource( 2 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Level"]
+position = Vector2( -20.9265, -1968.9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D4"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="Level"]
+position = Vector2( 1962.43, -2002.2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D5"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Level"]
+position = Vector2( 1134.48, 908.267 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D2"]
+shape = SubResource( 4 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Level"]
+position = Vector2( 1730.53, 573.043 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D3"]
+shape = SubResource( 4 )
