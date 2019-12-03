@@ -33,7 +33,8 @@ margin_bottom = 1080.0
 margin_right = 1237.0
 margin_bottom = 870.0
 rect_pivot_offset = Vector2( 1739.47, 642.471 )
-text = "- Node tree
+text = "- Root of node tree
+- Fully functional element
 - Spatial and/or functional group
 "
 
